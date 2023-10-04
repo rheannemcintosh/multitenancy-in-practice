@@ -24,6 +24,8 @@
         {{ App\Models\User::where('tenant_id', 1)->count() }}
     </div>
 
+    <livewire:department-form />
+
     <div class="relative min-h-screen bg-gray-100 bg-center sm:flex sm:justify-center sm:items-center bg-dots dark:bg-gray-900 selection:bg-indigo-500 selection:text-white">
 
         @if (Route::has('login'))
