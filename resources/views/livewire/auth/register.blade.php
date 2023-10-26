@@ -5,7 +5,7 @@
         <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div class="mx-auto w-full max-w-sm">
                 <div>
-                    <img class="h-12 w-auto" src="/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                    <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Workflow" />
                     <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900">
                         Start your free trial
                     </h2>
