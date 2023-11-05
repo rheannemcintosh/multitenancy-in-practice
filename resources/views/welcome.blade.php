@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('body')
     <div class="bg-white">
         <x-navigation />
         <div class="relative isolate px-6 pt-14 lg:px-8">
