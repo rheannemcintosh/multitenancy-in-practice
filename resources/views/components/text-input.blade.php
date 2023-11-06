@@ -1,7 +1,6 @@
 @props([
     'type' => "text",
     'label' => "",
-    'required' => false,
     'placeholder' => "",
 ])
 
@@ -14,7 +13,6 @@
             {{ $attributes->whereStartsWith('wire:model') }}
             id="{{ $attributes->whereStartsWith('wire:model')->first() }}"
             type="{{ $type }}"
-            required="{{ $required }}"
             placeholder="{{ $placeholder }}"
 
             @error ($attributes->whereStartsWith('wire:model')->first())
