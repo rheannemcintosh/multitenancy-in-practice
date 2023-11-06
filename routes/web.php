@@ -47,6 +47,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('password/confirm', Confirm::class)
         ->name('password.confirm');
+
+    Route::get('/documents/{user}/{filename}', [DocumentController::class, 'show']);
 });
 
 Route::middleware('auth')->group(function () {
