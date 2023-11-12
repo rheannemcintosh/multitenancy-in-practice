@@ -16,6 +16,7 @@
                         <form wire:submit.prevent="register">
                             <div>
                                 <x-text-input
+                                    wire:model.debounce.1000ms="name"
                                     wire:model="name"
                                     type="text"
                                     label="Name"
