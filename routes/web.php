@@ -21,7 +21,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/load-logins', function() {
+    $users = App\User::withoutGlobalScopes()->whereNotNull('tenant_id')->get();
+    foreach($users as $user) {
+        factory(App\Login::class, 1)->create([
+            'user_id' => $user->id,
+            'tenant_id' => $user->tenant_id,
+            'created_at' => now(),
+        ]);
+    }
+});
+
+Route::get('/', [HomeController::class, 'show'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
@@ -38,6 +49,9 @@ Route::get('password/reset/{token}', Reset::class)
     ->name('password.reset');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/leave-impersonation', [\App\Http\Controllers\ImpersonationController::class, 'leave'])->name('leave-impersonation');
+
     Route::view('/team', 'team')->name('team.index');
     Route::view('/team/add-user', 'users.create')->name('users.create');
 
